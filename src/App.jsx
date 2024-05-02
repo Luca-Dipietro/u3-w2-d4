@@ -8,6 +8,7 @@ import TvShows from "./components/TvShows";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Profile from "./components/ProfilePage";
 import HomePage from "./components/HomePage";
+import MoviesDetails from "./components/MoviesDetails";
 
 function App() {
   return (
@@ -33,7 +34,7 @@ function App() {
               </div>
             }
           />
-          <Route path="/MoviesDetails/:moviedId" />
+          <Route path="/MoviesGallery/MoviesDetails/:movieId" element={<MoviesDetails />} />
           <Route
             path="/ProfilePage"
             element={

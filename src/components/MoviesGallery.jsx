@@ -3,7 +3,7 @@ import { Container, Col, Spinner, Alert } from "react-bootstrap";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const MoviesGallery = (props) => {
   const [movies, setMovies] = useState([]);
@@ -117,11 +117,9 @@ const MoviesGallery = (props) => {
             {movies.map((movie) => (
               <Col key={movie.imdbID}>
                 <div className="d-flex justify-content-center">
-                  <img
-                    src={movie.Poster}
-                    alt={`Poster of ${movie.Title}`}
-                    onClick={() => <NavLink to="/MovieDetails" />}
-                  />
+                  <Link to={`/MoviesGallery/MoviesDetails/${movie.imdbID}`}>
+                    <img src={movie.Poster} alt={`Poster of ${movie.Title}`} />
+                  </Link>
                 </div>
               </Col>
             ))}
